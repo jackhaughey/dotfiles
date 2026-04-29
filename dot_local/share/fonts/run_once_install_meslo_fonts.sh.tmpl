@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+FONT_DIR="$HOME/.local/share/fonts"
+MESLO_ZIP="Meslo.zip"
+MESLO_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip"
+
+mkdir -p "$FONT_DIR"
+cd "$FONT_DIR"
+
+echo "Downloading Meslo Nerd Font..."
+curl -L -o "$MESLO_ZIP" "$MESLO_URL"
+
+echo "Unzipping Meslo Nerd Font..."
+unzip -o "$MESLO_ZIP"
+
+echo "Refreshing font cache..."
+fc-cache -fv
+
+echo "Meslo Nerd Font installed successfully."
