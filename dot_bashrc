@@ -1,0 +1,4 @@
+# Adding aliases
+if [ -f ~/.config/shell/aliases.sh ]; then
+    . ~/.config/shell/aliases.sh
+fi
