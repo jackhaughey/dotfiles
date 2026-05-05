@@ -1,0 +1,7 @@
+[data]
+name = "Jack Haughey"
+
+[source]
+type = "git"
+url = "https://github.com/jackhaughey/dotfiles"
+
