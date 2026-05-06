@@ -30,5 +30,5 @@ if [ -f ~/.config/shell/aliases.sh ]; then
 fi
 
 # Starship
-eval "$(starship init bash)"
 eval "$($HOME/.local/bin/mise activate bash)"
+eval "$(starship init bash)"
