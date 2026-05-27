@@ -29,6 +29,10 @@ if [ -f ~/.config/shell/aliases.sh ]; then
     . ~/.config/shell/aliases.sh
 fi
 
+# Mise
+if command -v mise >/dev/null 2>&1; then
+    eval "$(mise activate bash)"
+fi
+
 # Starship
-eval "$($HOME/.local/bin/mise activate bash)"
 eval "$(starship init bash)"
