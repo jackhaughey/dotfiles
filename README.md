@@ -36,11 +36,13 @@ dotfiles/
 
 ## Installation
 
-### 1. Install chezmoi
+### 1. Ensure Chezmoi is installed, as per the fedora-atomic-bootstrap repo
+chezmoi is installed automatically when running:
 
-```bash
-sh -c "$(curl -fsLS get.chezmoi.io)"
-```
+fedora‑atomic‑bootstrap → bootstrap.sh
+
+If you haven’t run it yet, start there:`
+
 
 ### 2. Apply dotfiles
 ```bash
@@ -61,4 +63,39 @@ This will:
 
     Run all run_once_*.tmpl scripts
 
+Key Components
+Bash Configuration
 
+.bashrc includes mise initialisation, PATH adjustments, aliases, and starship setup.
+mise Setup
+
+run_once_setup_mise.sh.tmpl installs mise and your defined tools.
+Starship Prompt
+
+run_once_starship_preset.sh.tmpl installs your preferred starship preset.
+Cloud Tools
+
+run_once_20_cloud_tools.sh.tmpl installs AWS CLI, Azure CLI, kubectl, Helm, and more.
+Kubernetes Helpers
+
+k8s.sh provides shortcuts and helper functions for cluster workflows.
+
+---
+
+## Updating Your Dotfiles
+```bash
+chezmoi add <file>
+chezmoi apply
+git commit -am "update"
+git push
+```
+
+## Roadmap
+
+    Add Nix bootstrap
+
+    Add DevPod templates
+
+    Add Toolbox/Distrobox presets
+
+    Add GCP/OCI tooling
