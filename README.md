@@ -19,6 +19,7 @@ Optimised for **Fedora Atomic desktops** (Silverblue/Kinoite/Sericea) and **cont
 ---
 
 ## Repository Structure
+```
 dotfiles/
 ├── chezmoi.toml
 ├── dot_bashrc
@@ -31,6 +32,7 @@ dotfiles/
 ├── run_once_setup_mise.sh.tmpl
 ├── run_once_starship_preset.sh.tmpl
 ├── run_once_20_cloud_tools.sh.tmpl
+```
 
 ---
 
