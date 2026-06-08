@@ -20,18 +20,27 @@ Optimised for **Fedora Atomic desktops** (Silverblue/Kinoite/Sericea) and **cont
 
 ## Repository Structure
 ```
-dotfiles/
+├── archive
+│   ├── k8s.sh
+│   ├── run_once_20_cloud_tools.sh.tmpl
+│   ├── run_once_install_tools.sh.tmpl
+│   └── run_once_setup_mise.sh.tmpl
 ├── chezmoi.toml
 ├── dot_bashrc
-├── dot_config/
-│   └── starship.toml
-├── dot_local/
-│   └── share/fonts/
-├── k8s.sh
-├── run_once_install_tools.sh.tmpl
-├── run_once_setup_mise.sh.tmpl
-├── run_once_starship_preset.sh.tmpl
-├── run_once_20_cloud_tools.sh.tmpl
+├── dot_config
+│   ├── alacritty
+│   │   └── alacritty.toml
+│   ├── k9s
+│   │   └── aliases.yaml
+│   ├── shell
+│   │   └── aliases.sh
+│   └── starship.toml
+├── dot_local
+│   └── share
+│       └── fonts
+│           └── run_once_install_meslo_fonts.sh.tmpl
+├── README.md
+└── run_once_starship_preset.sh.tmpl
 ```
 
 ---
@@ -48,8 +57,7 @@ If you haven’t run it yet, start there:`
 
 ### 2. Apply dotfiles
 ```bash
-chezmoi init jackhaughey
-chezmoi apply
+chezmoi init --apply https://github.com/jackhaughey/dotfiles
 ```
 This will:
 
@@ -57,30 +65,15 @@ This will:
 
     Configure bash
 
-    Install mise + tools
-
     Apply starship preset
-
-    Install cloud tooling
 
     Run all run_once_*.tmpl scripts
 
 Key Components
 Bash Configuration
 
-.bashrc includes mise initialisation, PATH adjustments, aliases, and starship setup.
-mise Setup
-
-run_once_setup_mise.sh.tmpl installs mise and your defined tools.
 Starship Prompt
-
 run_once_starship_preset.sh.tmpl installs your preferred starship preset.
-Cloud Tools
-
-run_once_20_cloud_tools.sh.tmpl installs AWS CLI, Azure CLI, kubectl, Helm, and more.
-Kubernetes Helpers
-
-k8s.sh provides shortcuts and helper functions for cluster workflows.
 
 ---
 
